@@ -59,3 +59,16 @@ Automated Build and Test: Using Jenkins and AWS CodeBuild, the project automates
 Containerization: The application is containerized using Docker to ensure consistent environments across development, testing, and production.
 
 Configuration Management: Ansible is used to automate the installation of necessary software on the servers.
+
+
+
+
+
+
+## Contact Information
+
+For any inquiries or support, please contact us via:
+
+- **Email**: [support@example.com](mailto:support@example.com)
+- **LinkedIn**: [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pradeep-k-229b23254)
+
