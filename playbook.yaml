@@ -1,0 +1,44 @@
+---
+- name: "Installing Docker and Java on the manage nodes"
+  hosts: "slave_node"
+  become: yes
+  tasks:
+   - name: "Update the package list" 
+     apt:
+      update_cache: yes
+   - name: "Installing reqired dependency"
+     apt:
+      pkg:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - software-properties-common
+          - python3-pip
+          - virtualenv
+          - python3-setuptools
+      state: latest
+      update_cache: true
+   - name: "add GPG key"
+     apt_key: 
+      url: https://download.docker.com/linux/ubuntu/gpg
+      state: present
+   - name: "add docker repository"
+     apt_repository: 
+      repo: deb https://download.docker.com/linux/ubuntu focal stable
+      state: present
+   - name: "apt update and install docker"
+     apt:
+      update_cache: yes
+      name: docker-ce
+      state: latest 
+   - name: "start and enable docker service"
+     systemd:
+      name: docker
+      state: started
+      enabled: yes
+   - name: "install java"
+     apt: 
+      name: default-jdk
+      state: present
+
+...
